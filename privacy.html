@@ -10,24 +10,31 @@
         .container { max-width: 800px; margin: 0 auto; }
         h1 { font-size: 36px; margin-bottom: 10px; color: #A78BFA; }
         h2 { font-size: 24px; margin-top: 30px; margin-bottom: 15px; color: #60A5FA; }
+        h3 { font-size: 18px; margin-top: 20px; margin-bottom: 10px; color: #818CF8; }
         p { margin-bottom: 15px; color: #CBD5E1; }
         ul { margin-left: 20px; margin-bottom: 15px; }
         li { margin-bottom: 8px; color: #CBD5E1; }
         .updated { color: #94A3B8; font-size: 14px; margin-bottom: 30px; }
         a { color: #A78BFA; }
+        .highlight-box { background: #1E293B; border: 1px solid #334155; border-radius: 8px; padding: 20px; margin: 20px 0; }
+        .highlight-box h3 { margin-top: 0; color: #F59E0B; }
+        strong { color: #F1F5F9; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: April 2026</p>
+        <p class="updated">Last updated: July 17, 2026</p>
+        
+        <p>VerbaVox ("we," "us," or "our") is a real-time voice translation mobile application developed and operated by <strong>NovaStack LLC</strong>. This Privacy Policy explains how we collect, use, and protect your information when you use our services.</p>
         
         <h2>1. Information We Collect</h2>
         <p>VerbaVox collects the following information to provide our real-time translation services:</p>
         <ul>
-            <li><strong>Phone Number:</strong> Used for account verification via SMS. We send a one-time verification code when you sign up or log in.</li>
-            <li><strong>Audio Data:</strong> Temporarily processed for real-time translation during calls. Audio is not stored after the call ends.</li>
-            <li><strong>Usage Data:</strong> Call duration and feature usage to improve our services.</li>
+            <li><strong>Phone Number:</strong> Collected during account registration for identity verification via SMS. Your phone number is used solely to send one-time verification codes.</li>
+            <li><strong>Audio Data:</strong> Temporarily processed for real-time translation during calls. Audio is processed in real-time and is NOT stored or recorded after the call ends.</li>
+            <li><strong>Usage Data:</strong> Call duration, feature usage, and app performance metrics to improve our services.</li>
+            <li><strong>Device Information:</strong> Device type, operating system, and app version for troubleshooting and compatibility.</li>
         </ul>
         
         <h2>2. How We Use Your Information</h2>
@@ -36,39 +43,93 @@
             <li>To provide real-time voice and video translation services</li>
             <li>To process payments for subscription services</li>
             <li>To improve our translation accuracy and app performance</li>
+            <li>To communicate important service updates</li>
         </ul>
         
-        <h2>3. SMS Messages</h2>
-        <p>By providing your phone number, you consent to receive SMS messages from VerbaVox for:</p>
-        <ul>
-            <li>Account verification codes (one-time passwords)</li>
-            <li>Security alerts related to your account</li>
-        </ul>
-        <p>Message frequency: Verification codes are sent only when you request them. Message and data rates may apply. Reply STOP to opt-out.</p>
+        <div class="highlight-box">
+            <h3>3. SMS/Text Messaging Terms</h3>
+            <p><strong>Program Name:</strong> VerbaVox Account Verification</p>
+            
+            <p><strong>What You're Consenting To:</strong> By providing your phone number in the VerbaVox app, you expressly consent to receive SMS text messages from VerbaVox (operated by NovaStack LLC) for account verification purposes.</p>
+            
+            <p><strong>Types of Messages:</strong></p>
+            <ul>
+                <li>One-time verification codes (OTP) when you sign up or log in</li>
+                <li>Security alerts if suspicious activity is detected on your account</li>
+            </ul>
+            
+            <p><strong>Message Frequency:</strong> You will only receive SMS messages when you explicitly request a verification code by tapping "Send Code" in the app. Typically 1-2 messages per login attempt. We do NOT send marketing or promotional messages.</p>
+            
+            <p><strong>Message and Data Rates:</strong> Message and data rates may apply. Check with your mobile carrier for details about your messaging plan.</p>
+            
+            <p><strong>How to Opt-Out:</strong> You can opt out of SMS messages at any time by:</p>
+            <ul>
+                <li>Replying <strong>STOP</strong> to any message from us</li>
+                <li>Emailing us at <a href="mailto:support@verbavox.net">support@verbavox.net</a></li>
+            </ul>
+            <p>After opting out, you will receive one final confirmation message. Note: Opting out of SMS will prevent you from using phone verification for your account.</p>
+            
+            <p><strong>Help:</strong> For help, reply <strong>HELP</strong> to any message or email <a href="mailto:support@verbavox.net">support@verbavox.net</a></p>
+            
+            <p><strong>Carriers Supported:</strong> Compatible with all major US carriers including AT&T, Verizon, T-Mobile, Sprint, and others.</p>
+            
+            <p><strong>Your Consent is Not Required for Purchase:</strong> Consenting to receive SMS messages is not a condition of purchasing any goods or services from VerbaVox.</p>
+        </div>
         
         <h2>4. Data Sharing</h2>
-        <p>We do not sell, trade, or share your personal information with third parties for marketing purposes. We may share data with:</p>
+        <p>We do NOT sell, trade, rent, or share your personal information with third parties for marketing purposes.</p>
+        <p>We may share limited data with trusted service providers who help us operate our services:</p>
         <ul>
-            <li>Service providers (Twilio for SMS, Agora for video calls) under strict confidentiality agreements</li>
-            <li>Law enforcement when required by law</li>
+            <li><strong>Twilio:</strong> SMS delivery for verification codes (receives only your phone number)</li>
+            <li><strong>Agora:</strong> Video/voice call infrastructure (no personal data shared)</li>
+            <li><strong>Stripe:</strong> Payment processing (receives payment information you provide)</li>
+            <li><strong>AI Translation Services:</strong> Text/audio for translation (anonymized, not linked to your identity)</li>
         </ul>
+        <p>We may also disclose information when required by law or to protect our rights.</p>
         
         <h2>5. Data Security</h2>
-        <p>We implement industry-standard security measures to protect your data, including encryption in transit and at rest.</p>
+        <p>We implement industry-standard security measures to protect your data:</p>
+        <ul>
+            <li>Encryption in transit (TLS/SSL) and at rest</li>
+            <li>Secure authentication practices</li>
+            <li>Regular security audits</li>
+            <li>Limited employee access to personal data</li>
+        </ul>
         
-        <h2>6. Your Rights</h2>
+        <h2>6. Data Retention</h2>
+        <ul>
+            <li><strong>Phone Numbers:</strong> Retained while your account is active. Deleted upon account deletion request.</li>
+            <li><strong>Audio Data:</strong> NOT retained. Processed in real-time and immediately discarded.</li>
+            <li><strong>Usage Data:</strong> Retained for up to 12 months for service improvement, then anonymized.</li>
+        </ul>
+        
+        <h2>7. Your Rights</h2>
         <p>You have the right to:</p>
         <ul>
             <li>Access your personal data</li>
-            <li>Request deletion of your account</li>
+            <li>Correct inaccurate information</li>
+            <li>Request deletion of your account and associated data</li>
             <li>Opt-out of SMS messages by replying STOP</li>
+            <li>Export your data in a portable format</li>
         </ul>
+        <p>To exercise any of these rights, contact us at <a href="mailto:privacy@verbavox.net">privacy@verbavox.net</a></p>
         
-        <h2>7. Contact Us</h2>
-        <p>For privacy-related questions, contact us at: <a href="mailto:privacy@verbavox.net">privacy@verbavox.net</a></p>
+        <h2>8. Children's Privacy</h2>
+        <p>VerbaVox is not intended for children under 13. We do not knowingly collect personal information from children under 13. If you believe we have collected such information, please contact us immediately.</p>
         
-        <h2>8. Changes to This Policy</h2>
-        <p>We may update this policy periodically. We will notify you of significant changes via the app or email.</p>
+        <h2>9. International Users</h2>
+        <p>VerbaVox is operated from the United States. By using our services, you consent to the transfer of your information to the United States.</p>
+        
+        <h2>10. Contact Us</h2>
+        <p>For privacy-related questions or concerns, contact us at:</p>
+        <p>
+            <strong>NovaStack LLC</strong><br>
+            Email: <a href="mailto:privacy@verbavox.net">privacy@verbavox.net</a><br>
+            Support: <a href="mailto:support@verbavox.net">support@verbavox.net</a>
+        </p>
+        
+        <h2>11. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy periodically. We will notify you of significant changes via the app or email. Your continued use of VerbaVox after changes constitutes acceptance of the updated policy.</p>
     </div>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1b9f4881b9ee815',t:'MTc4NDEzMDk2NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
