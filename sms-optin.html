@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Opt-In Flow - VerbaVox</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: #0F172A; color: #E2E8F0; line-height: 1.8; padding: 40px 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        h1 { font-size: 32px; margin-bottom: 10px; color: #A78BFA; text-align: center; }
+        h2 { font-size: 24px; margin-top: 40px; margin-bottom: 20px; color: #60A5FA; }
+        p { margin-bottom: 15px; color: #CBD5E1; }
+        .subtitle { text-align: center; color: #94A3B8; margin-bottom: 40px; }
+        
+        .flow-container { display: flex; flex-direction: column; gap: 40px; margin-top: 30px; }
+        
+        .step { 
+            background: #1E293B; 
+            border-radius: 16px; 
+            padding: 30px; 
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background: #4F46E5;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .step-content { flex: 1; }
+        .step-title { font-size: 20px; font-weight: bold; color: #F1F5F9; margin-bottom: 10px; }
+        .step-description { color: #94A3B8; margin-bottom: 20px; }
+        
+        .phone-mockup {
+            background: #0F172A;
+            border: 3px solid #334155;
+            border-radius: 24px;
+            padding: 20px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        
+        .phone-screen {
+            background: #1E293B;
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .phone-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .phone-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        .phone-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #F1F5F9;
+        }
+        
+        .input-field {
+            background: #0F172A;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 12px 15px;
+            color: #9CA3AF;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .disclosure-box {
+            background: #0F172A;
+            border: 1px solid #F59E0B;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 12px;
+            color: #FCD34D;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .send-btn {
+            background: #4F46E5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 14px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .verification-code {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .code-digit {
+            background: #0F172A;
+            border: 2px solid #4F46E5;
+            border-radius: 8px;
+            width: 45px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #F1F5F9;
+        }
+        
+        .highlight-box {
+            background: #1E293B;
+            border: 2px solid #10B981;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .highlight-box h3 {
+            color: #10B981;
+            margin-bottom: 15px;
+        }
+        
+        .checklist {
+            list-style: none;
+        }
+        
+        .checklist li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10B981;
+            font-weight: bold;
+        }
+        
+        .links-section {
+            background: #1E293B;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        .links-section a {
+            color: #A78BFA;
+            text-decoration: none;
+        }
+        
+        .links-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>VerbaVox SMS Opt-In Flow</h1>
+        <p class="subtitle">How users consent to receive SMS verification messages</p>
+        
+        <div class="highlight-box">
+            <h3>Compliance Summary</h3>
+            <ul class="checklist">
+                <li>Users voluntarily enter their phone number in the mobile app</li>
+                <li>Clear disclosure is shown BEFORE user takes action</li>
+                <li>User must tap "Send Verification Code" to opt-in</li>
+                <li>No messages sent without explicit user action</li>
+                <li>Message frequency and data rates disclosed</li>
+                <li>Opt-out instructions provided (Reply STOP)</li>
+            </ul>
+        </div>
+        
+        <div class="flow-container">
+            <!-- Step 1 -->
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-title">User Downloads App & Starts Registration</div>
+                    <p class="step-description">User downloads VerbaVox from App Store or Google Play and opens the app to create an account.</p>
+                </div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-title">User Enters Phone Number</div>
+                    <p class="step-description">User voluntarily enters their mobile phone number for account verification.</p>
+                    
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="phone-header">
+                                <div class="phone-icon">📱</div>
+                                <div class="phone-title">Verify Your Phone</div>
+                            </div>
+                            <div class="input-field">
+                                +1 (555) 123-4567
+                            </div>
+                            <div class="disclosure-box">
+                                <strong>SMS Consent:</strong> By tapping "Send Verification Code", you agree to receive a one-time SMS verification code from VerbaVox. Message frequency: 1 message per request. Message and data rates may apply. Reply STOP to opt-out. See our <u>Privacy Policy</u>.
+                            </div>
+                            <button class="send-btn">Send Verification Code</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <div class="step-title">User Taps "Send Verification Code" (Explicit Opt-In)</div>
+                    <p class="step-description">Only after the user reads the disclosure and taps the button, we send ONE SMS message with a verification code. This is the explicit call-to-action (CTA) that triggers the opt-in.</p>
+                </div>
+            </div>
+            
+            <!-- Step 4 -->
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <div class="step-title">User Receives SMS & Enters Code</div>
+                    <p class="step-description">User receives a single SMS with a 6-digit verification code and enters it in the app.</p>
+                    
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="phone-header">
+                                <div class="phone-icon">✉️</div>
+                                <div class="phone-title">Enter Code</div>
+                            </div>
+                            <p style="font-size: 14px; text-align: center; color: #94A3B8; margin-bottom: 15px;">
+                                We sent a code to +1 (555) 123-4567
+                            </p>
+                            <div class="verification-code">
+                                <div class="code-digit">1</div>
+                                <div class="code-digit">2</div>
+                                <div class="code-digit">3</div>
+                                <div class="code-digit">4</div>
+                                <div class="code-digit">5</div>
+                                <div class="code-digit">6</div>
+                            </div>
+                            <button class="send-btn">Verify</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 5 -->
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <div class="step-title">Verification Complete</div>
+                    <p class="step-description">Account is verified. User will only receive future SMS messages if they explicitly request another verification code (e.g., logging in on a new device).</p>
+                </div>
+            </div>
+        </div>
+        
+        <h2>Sample SMS Message</h2>
+        <div class="phone-mockup" style="max-width: 350px;">
+            <div class="phone-screen">
+                <p style="font-size: 12px; color: #6B7280; margin-bottom: 5px;">VerbaVox</p>
+                <p style="font-size: 14px; color: #F1F5F9;">Your VerbaVox verification code is: 123456. This code expires in 10 minutes. Reply STOP to opt-out.</p>
+            </div>
+        </div>
+        
+        <div class="highlight-box" style="border-color: #F59E0B;">
+            <h3 style="color: #F59E0B;">Key Compliance Points</h3>
+            <ul class="checklist">
+                <li><strong>Disclosure shown BEFORE opt-in:</strong> User sees consent text before tapping the button</li>
+                <li><strong>Single opt-in action:</strong> Tapping "Send Verification Code" is the explicit CTA</li>
+                <li><strong>No pre-checked boxes:</strong> User must actively tap to consent</li>
+                <li><strong>Message frequency stated:</strong> "1 message per request"</li>
+                <li><strong>Rates disclosure:</strong> "Message and data rates may apply"</li>
+                <li><strong>Opt-out method:</strong> "Reply STOP to opt-out"</li>
+                <li><strong>Privacy Policy linked:</strong> Accessible from the consent screen</li>
+                <li><strong>No marketing messages:</strong> Only transactional verification codes</li>
+            </ul>
+        </div>
+        
+        <div class="links-section">
+            <h3 style="color: #F1F5F9; margin-bottom: 15px;">Related Documents</h3>
+            <p><a href="/privacy.html">Privacy Policy</a> - Full privacy policy including SMS terms</p>
+            <p><a href="/terms.html">Terms of Service</a> - Complete terms and conditions</p>
+            <p><a href="/">VerbaVox Home</a> - Main website</p>
+        </div>
+        
+        <p style="margin-top: 40px; text-align: center; color: #6B7280; font-size: 14px;">
+            VerbaVox is operated by NovaStack LLC<br>
+            Contact: <a href="mailto:support@verbavox.net" style="color: #A78BFA;">support@verbavox.net</a>
+        </p>
+    </div>
+</body>
+</html>
